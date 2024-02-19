@@ -10,7 +10,6 @@ RUN go build
 
 RUN adduser --system --uid 99 fileflows
 
-USER fileflows
-GROUP 100
+USER 99:100
 
 CMD [ "sh", "-c", "./chaturbate-dvr -gui-username ${GUI_USERNAME} -gui-password ${GUI_PASSWORD}" ]
